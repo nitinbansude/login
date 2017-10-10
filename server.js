@@ -11,3 +11,9 @@ app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended : false}));
 app.use(bodyParser.json());
 app.use(session({ secret: config.secret, resave: false, saveUninitialized: true }));
+
+
+
+var server = app.listen(3000, function () {
+    console.log('Server listening at http://' + server.address().address + ':' + server.address().port);
+});
